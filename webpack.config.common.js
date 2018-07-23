@@ -41,6 +41,20 @@ module.exports = {
     rules: [
       {
         exclude: /node_modules/,
+        test: /\.ts(x?)$/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              sourceMap: true,
+              useBabel: true,
+              useCache: true,
+            },
+          },
+        ],
+      },
+      {
+        exclude: /node_modules/,
         test: /\.jsx?$/,
         use: [
           {
